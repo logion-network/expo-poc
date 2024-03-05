@@ -1,0 +1,24 @@
+import { Environment, LogionClientConfig } from "@logion/client";
+
+/**
+ * Seed of a Logion user interacting with the platform.
+ * */
+export const USER_SEED = "<your seed phrase here>";
+/**
+ * Public address of the Logion Legal Officer linked to the Logion user
+ * by a closed Identity LOC.
+ */
+export const LEGAL_OFFICER = "<an SS58 address of the LLO e.g. 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY>";
+/**
+ * Environment, one of DEV | TEST | MVP
+ */
+export const LOGION_ENV = Environment.DEV;
+/**
+ * For developers only: override environment by defining config.
+ */
+export const LOGION_CLIENT_CONFIG: LogionClientConfig | undefined = undefined;
+/**
+ * Collection LOC id user will contribute with records.
+ * (decimal or uuid format)
+ */
+export const COLLECTION_LOC_ID = "";
