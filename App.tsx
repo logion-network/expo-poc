@@ -42,14 +42,15 @@ export default function App() {
             const keypair = keyring.addFromUri(USER_SEED);
             const keyringSigner = new KeyringSigner(keyring);
             setSigner(keyringSigner);
-            const accountId = createdClient.logionApi.queries.getValidAccountId(keypair.address, "Polkadot");
+            const accountId = ValidAccountId.polkadot(keypair.address);
             setAccountId(accountId);
-            createdClient = createdClient.withCurrentAddress(accountId);
+            createdClient = createdClient.withCurrentAccount(accountId);
             const authenticatedClient = await createdClient.authenticate([accountId], keyringSigner);
             setClient(authenticatedClient);
 
             const locsState = await authenticatedClient.locsState();
-            const identityLoc = locsState.closedLocs["Identity"].find(loc => loc.owner.address === LEGAL_OFFICER);
+            const legalOfficer = ValidAccountId.polkadot(LEGAL_OFFICER);
+            const identityLoc = locsState.closedLocs["Identity"].find(loc => loc.owner.account.equals(legalOfficer));
             if (identityLoc) {
                 setIdentityLoc(identityLoc as ClosedLoc);
             } else {

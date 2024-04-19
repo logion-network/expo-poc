@@ -10,8 +10,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@logion/client": "^0.40.1-1",
-    "@logion/client-expo": "^0.1.0-1",
+    "@logion/client": "^0.43.0",
+    "@logion/client-expo": "^0.1.1",
     "buffer": "^6.0.3",
     "expo": "~50.0.8",
     "expo-crypto": "^12.8.1",
