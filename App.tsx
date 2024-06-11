@@ -168,7 +168,7 @@ export default function App() {
             }
             {
                 invitedContributorLoc !== undefined &&
-                <Section title="Invited Contributor Collecion LOC">
+                <Section title="Invited Contributor Collection LOC">
                     ID: {invitedContributorLoc?.data.id.toDecimalString() || "None"}{"\n"}
                     Records: {numberOfTokensRecords.toString()}{"\n"}
                     <Button
